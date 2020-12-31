@@ -5,7 +5,7 @@ import Task from "./Task";
 class VisibleTasks extends React.Component {
   render() {
     return (
-      <Table>
+      <Table hover size="sm">
         <thead>
           <tr>
             <th>Task ID</th>

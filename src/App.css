@@ -1,3 +1,11 @@
 .add-btn {
   margin: 5px 0 3px 0;
 }
+
+.done-btn {
+  margin: 3px;
+}
+
+.remove-btn {
+  margin: 3px;
+}

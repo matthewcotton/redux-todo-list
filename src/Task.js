@@ -6,18 +6,28 @@ class Task extends React.Component {
     return (
       <tr>
         <td>{this.props.id}</td>
-        <td>
+        <td onClick={this.props.onClick}>
           <span
             style={{
               textDecoration: this.props.completed ? "line-through" : "none",
             }}
-            onClick={this.props.onClick}
           >
             {this.props.description}
           </span>
         </td>
         <td>
-          <Button variant="warning" onClick={this.props.removeClick}>
+          <Button
+            className="done-btn"
+            variant="warning"
+            onClick={this.props.onClick}
+          >
+            {this.props.completed ? "Undone" : "Done"}
+          </Button>
+          <Button
+            className="remove-btn"
+            variant="warning"
+            onClick={this.props.removeClick}
+          >
             Remove
           </Button>
         </td>
