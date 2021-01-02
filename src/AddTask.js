@@ -15,7 +15,7 @@ class AddTask extends React.Component {
           if (!input.value.trim()) {
             return;
           }
-          this.props.dispatch(addTask(input.value));
+          this.props.dispatch(addTask(input.value, this.props));
           input.value = "";
         }}
       >

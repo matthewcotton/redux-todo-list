@@ -10,19 +10,6 @@ function getVisibleTasks(tasks, filter) {
     ? tasks.filter((t) => !t.completed)
     : tasks);
 }
-//   function getVisibleTasks(tasks, filter) {
-//   // console.log(filter)
-//   switch (filter) {
-//     case 'SHOW_COMPLETED':
-//       return tasks.filter(t => t.completed)
-//     case 'SHOW_ACTIVE':
-//       return tasks.filter(t => !t.completed)
-//     case 'SHOW_ALL':
-//     default:
-//       console.log("test1");
-//       return tasks;
-//   }
-// }
 
 function mapStateToProps(state) {
   return {

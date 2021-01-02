@@ -8,7 +8,6 @@ import {
 import { combineReducers } from "redux";
 
 function visibilityFilterReducer(state = VisibilityFilters.SHOW_ALL, action) {
-  // console.log(action.filter);
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
       return action.filter;
@@ -23,15 +22,19 @@ function taskReducer(state = [], action) {
       return [
         ...state,
         {
-          id: action.id,
+          id: state.length + 1,
           description: action.text,
           completed: false,
         },
       ];
     case REMOVE_TASK:
-      return state.filter((value) => action.id !== value.id);
+      let filtered = state.filter((value) => action.id !== value.id);
+      return filtered.map((task, i) => {
+        return Object.assign({}, task, {
+          id: i + 1,
+        })
+      })
     case TOGGLE_TASK:
-      // console.log(action)
       return state.map((task) => {
         if (task.id === action.id) {
           return Object.assign({}, task, {
@@ -40,12 +43,12 @@ function taskReducer(state = [], action) {
         }
         return task;
       });
-      default:
-        return state
+    default:
+      return state;
   }
 }
 
 export const rootReducer = combineReducers({
   VisibilityFilter: visibilityFilterReducer,
   tasks: taskReducer,
-})
+});

@@ -9,12 +9,12 @@ export const VisibilityFilters = {
   SHOW_ACTIVE: "SHOW_ACTIVE",
 };
 
-let nextTaskId = 0;
+// let nextTaskId = 0;
 
 export function addTask(text) {
   return {
     type: ADD_TASK,
-    id: nextTaskId++,
+    // id: nextTaskId++,
     text,
   };
 }
@@ -27,7 +27,6 @@ export function toggleTask(id) {
 }
 
 export function setVisibilityFilter(filter) {
-  // console.log(filter)
   return {
     type: SET_VISIBILITY_FILTER,
     filter,
