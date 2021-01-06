@@ -4,11 +4,11 @@ import { removeTask } from "./actions";
 import VisibleTasks from "./VisibleTasks";
 
 function getVisibleTasks(tasks, filter) {
-  return (filter === "SHOW_COMPLETED"
+  return filter === "SHOW_COMPLETED"
     ? tasks.filter((t) => t.completed)
     : filter === "SHOW_ACTIVE"
     ? tasks.filter((t) => !t.completed)
-    : tasks);
+    : tasks;
 }
 
 function mapStateToProps(state) {
